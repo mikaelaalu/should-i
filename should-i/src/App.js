@@ -4,13 +4,17 @@ import "./App.css";
 function App() {
   const [question, setQuestion] = useState("");
   const [isQuestion, setIsQuestion] = useState(false);
-
+  const [answer, setAnswer] = useState("");
   const handleInput = () => {
+    //clear input field after submit
     setQuestion("");
   };
 
-  const getAnswer = () => {
+  const displayQuestion = () => {
     setIsQuestion(true);
+
+    const answers = ["Yes", "No"];
+    setAnswer(answers[Math.floor(Math.random() * answers.length)]);
   };
 
   return (
@@ -21,16 +25,21 @@ function App() {
       </h3>
       <input
         className="inputField"
-        placeholder="Should I?"
+        placeholder="Should I"
         value={question}
         onChange={(e) => setQuestion(e.target.value)}
         onClick={handleInput}
       />
-      <button className="button" onClick={getAnswer}>
-        Submit
+      <button className="button" onClick={displayQuestion}>
+        Help
       </button>
 
-      {isQuestion && <p className="question">{question}</p>}
+      {isQuestion && (
+        <div className="questionContainer">
+          <p className="question">{question}</p>
+          <p className="answer">{answer}</p>
+        </div>
+      )}
     </section>
   );
 }
