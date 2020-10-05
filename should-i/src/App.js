@@ -3,13 +3,17 @@ import "./App.css";
 
 function App() {
   const [question, setQuestion] = useState("");
-  const [isQuestion, setIsQuestion] = useState(false);
+  const [questionExist, setQuestionExist] = useState(false);
   const [answer, setAnswer] = useState("");
+  const answers = ["Yes", "No"];
+
+  const updateValue = (e) => {
+    setQuestionExist(false);
+    setQuestion(e.target.value);
+  };
 
   const displayQuestion = () => {
-    setIsQuestion(true);
-
-    const answers = ["Yes", "No"];
+    setQuestionExist(true);
     setAnswer(answers[Math.floor(Math.random() * answers.length)]);
   };
 
@@ -23,13 +27,13 @@ function App() {
         className="inputField"
         placeholder="Should I"
         value={question}
-        onChange={(e) => setQuestion(e.target.value)}
+        onChange={updateValue}
       />
       <button className="button" onClick={displayQuestion}>
         Help
       </button>
 
-      {isQuestion && (
+      {questionExist && (
         <div className="questionContainer">
           <p className="question">{question}</p>
           <p className="answer">{answer}</p>
