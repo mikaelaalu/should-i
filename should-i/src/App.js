@@ -5,10 +5,6 @@ function App() {
   const [question, setQuestion] = useState("");
   const [isQuestion, setIsQuestion] = useState(false);
   const [answer, setAnswer] = useState("");
-  const handleInput = () => {
-    //clear input field after submit
-    setQuestion("");
-  };
 
   const displayQuestion = () => {
     setIsQuestion(true);
@@ -28,7 +24,6 @@ function App() {
         placeholder="Should I"
         value={question}
         onChange={(e) => setQuestion(e.target.value)}
-        onClick={handleInput}
       />
       <button className="button" onClick={displayQuestion}>
         Help
