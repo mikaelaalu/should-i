@@ -1,2 +1,2 @@
 # decider
-a simple website to help you take your boring decisions
+a simple website to help you make your boring decisions
