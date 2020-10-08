@@ -35,6 +35,11 @@ function App() {
     setAnswer("");
   };
 
+  const reset = () => {
+    setQuestion("");
+    setQuestionExist(false);
+  };
+
   return (
     <section>
       <h3 className="title">
@@ -77,6 +82,9 @@ function App() {
         <div className="questionContainer">
           <p className="question">{question}</p>
           <p className="answer">{decision}</p>
+          <button className="button" onClick={reset}>
+            New question
+          </button>
         </div>
       )}
     </section>
