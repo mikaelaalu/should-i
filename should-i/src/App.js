@@ -43,8 +43,8 @@ function App() {
   return (
     <section>
       <h3 className="title">
-        Ask your question below and let this cool machine give you the right
-        answer
+        Ask your question below and give all your possible answers and let this
+        cool machine give you the right answer
       </h3>
       <form className="questionForm">
         <label>Question</label>
