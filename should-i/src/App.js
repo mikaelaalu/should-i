@@ -32,6 +32,7 @@ function App() {
     e.preventDefault();
     setPossibleAnswers(possibleAnswers.concat(answer));
     setShowPossibleAnswers(true);
+    setAnswer("");
   };
 
   return (
@@ -40,10 +41,10 @@ function App() {
         Ask your question below and let this cool machine give you the right
         answer
       </h3>
-      <form>
+      <form className="questionForm">
         <label>Question</label>
         <input
-          className="inputField"
+          className="inputFieldQuestion"
           placeholder="Should I"
           value={question}
           onChange={updateValue}
@@ -51,23 +52,27 @@ function App() {
         />
       </form>
       <form onSubmit={addToAnswerList} className="answersForm">
-        <div>
+        <div className="possibleAnswer">
           <label>Possible answer</label>
           <input
-            className="inputField"
+            className="inputFieldAnswer"
             value={answer}
             onChange={addAnswers}
             placeholder="Answer.."
             required
           />
         </div>
-        <button>Add answer to compot</button>
+        <button className="buttonAdd">Add</button>
       </form>
 
       {showPossibleAnswers &&
-        possibleAnswers.map((example, i) => <p key={i}>{example}</p>)}
+        possibleAnswers.map((possibleAnswer, i) => (
+          <p key={i}>{possibleAnswer}</p>
+        ))}
 
-      <button onClick={displayQuestion}> Show me answer</button>
+      <button className="button" onClick={displayQuestion}>
+        Help
+      </button>
       {questionExist && (
         <div className="questionContainer">
           <p className="question">{question}</p>
