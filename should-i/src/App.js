@@ -76,7 +76,7 @@ function App() {
         ))}
 
       <button className="button" onClick={displayQuestion}>
-        Help
+        Answer my question
       </button>
       {questionExist && (
         <div className="questionContainer">
