@@ -72,7 +72,9 @@ function App() {
 
       {showPossibleAnswers &&
         possibleAnswers.map((possibleAnswer, i) => (
-          <p key={i}>{possibleAnswer}</p>
+          <p key={i} className="possibleAnswers">
+            {possibleAnswer}
+          </p>
         ))}
 
       <button className="button" onClick={displayQuestion}>

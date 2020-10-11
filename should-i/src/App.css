@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: red;
+  background-color: rgba(252, 76, 76, 0.842);
   color: white;
 }
 
@@ -43,7 +43,7 @@ section {
   margin: 10px;
   border: none;
   background-color: white;
-  color: red;
+  color: rgba(252, 76, 76, 0.842);
   font-size: 20px;
   margin-bottom: 10px;
   cursor: pointer;
@@ -54,7 +54,7 @@ section {
   height: 50px;
   border: none;
   background-color: white;
-  color: red;
+  color: rgba(252, 76, 76, 0.842);
   font-size: 30px;
   cursor: pointer;
 }
@@ -90,6 +90,9 @@ section {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+}
+.possibleAnswers {
+  font-weight: bold;
 }
 
 @media (min-width: 768px) {
